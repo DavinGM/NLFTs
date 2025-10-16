@@ -1,0 +1,169 @@
+/* Variabel Warna dan Pengaturan Dasar */
+:root {
+    --bright-blue: #00BFFF; 
+    --accent-blue: #1e90ff; 
+    --main-bg: #f7f7fa; 
+    --content-bg: #ffffff; 
+    --text-color: #2c3e50; 
+    --subtle-text: #7f8c8d; 
+    --shadow-subtle: 0 4px 12px rgba(0,0,0,0.08); 
+    --sidebar-width: 280px;
+    --header-height: 80px; /* Tinggi Header yang lebih rapi */
+}
+
+/* Global Reset dan Layout Utama */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg);
+    color: var(--text-color);
+}
+
+/* -------------------- Layout Wrapper untuk Footer Fix -------------------- */
+#page-wrapper {
+    display: flex; /* Sidebar dan Content berdampingan */
+    width: 100%;
+    min-height: 100vh; 
+}
+
+#content-wrapper {
+    display: flex; 
+    flex-direction: column; /* Header, Main, Footer tersusun vertikal */
+    flex-grow: 1; 
+}
+
+#docs-main {
+    flex-grow: 1; /* **Mendorong Footer ke bawah** */
+    padding: 0 40px; 
+}
+
+/* -------------------- Sidebar Navigasi -------------------- */
+#sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    background: linear-gradient(180deg, var(--bright-blue) 0%, var(--accent-blue) 100%); 
+    color: white;
+    padding: 20px 15px;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.15); 
+    position: sticky; 
+    top: 0;
+    height: 100vh;
+    overflow-y: auto; 
+}
+/* ... (Style sidebar h2, ul, li, a sama seperti sebelumnya) ... */
+#sidebar h2 { margin-top: 0; padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.3); font-size: 1.5em; font-weight: 600; }
+#sidebar-list { list-style: none; padding: 0; }
+#sidebar-list li a { display: block; padding: 12px 15px; color: white; text-decoration: none; transition: background-color 0.3s, transform 0.2s; border-radius: 6px; margin-bottom: 5px; font-size: 0.95em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#sidebar-list li a:hover, #sidebar-list li a:focus { background-color: rgba(255, 255, 255, 0.25); transform: translateX(5px); }
+
+
+/* -------------------- Hero Section (Header Sticky) -------------------- */
+#hero-section {
+    height: var(--header-height);
+    background-color: var(--content-bg);
+    padding: 0 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-subtle);
+    position: sticky; 
+    top: 0;
+    z-index: 10; 
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.hero-left { display: flex; align-items: center; }
+
+.hero-left h1 {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 1.8em; 
+    font-weight: 700;
+}
+
+/* Search Box dan Dropdown */
+.search-container {
+    position: relative;
+    width: 350px;
+    margin-left: 30px; 
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px 15px; 
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#searchInput:focus { border-color: var(--bright-blue); box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2); outline: none; }
+
+.search-results-dropdown {
+    list-style: none; padding: 10px; margin: 5px 0 0 0; position: absolute; top: 100%; width: 100%;
+    background: var(--content-bg); border-radius: 10px; z-index: 100; display: none; 
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
+}
+
+.search-results-dropdown li a {
+    display: block; padding: 10px 15px; color: var(--text-color); text-decoration: none; border-radius: 8px;
+    font-weight: 500; font-size: 0.9em; border-left: 3px solid transparent; transition: all 0.2s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.search-results-dropdown li a:hover {
+    background-color: var(--main-bg); color: var(--bright-blue); border-left: 3px solid var(--bright-blue); 
+    transform: translateX(2px);
+}
+
+.search-results-dropdown li.no-results { color: var(--subtle-text); font-style: italic; padding: 10px 15px; text-align: center; }
+
+.github-link {
+    background-color: var(--text-color); color: white; padding: 10px 18px; text-decoration: none;
+    border-radius: 8px; font-weight: 600; transition: background-color 0.3s, transform 0.2s;
+}
+
+.github-link:hover { background-color: var(--bright-blue); box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3); transform: translateY(-2px); }
+
+
+/* -------------------- Body Dokumentasi -------------------- */
+#docs-body {
+    padding-top: 40px; 
+    padding-bottom: 40px; /* Tambahkan padding bawah */
+}
+
+#docs-body h2 { color: var(--bright-blue); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 30px; font-size: 2em; font-weight: 700; }
+
+.doc-item {
+    background-color: var(--content-bg); padding: 30px; margin-bottom: 35px; border-radius: 12px; 
+    box-shadow: var(--shadow-subtle); border-left: 5px solid var(--bright-blue); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doc-item:hover { transform: translateY(-5px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+
+.doc-item h3 { color: var(--text-color); border-bottom: 1px solid #ecf0f1; padding-bottom: 10px; margin-top: 0; font-size: 1.6em; font-weight: 600; }
+
+.doc-item p { line-height: 1.7; color: #555; }
+
+/* -------------------- Footer Styling (Dipastikan di Bawah) -------------------- */
+#main-footer {
+    width: 100%;
+    padding: 25px 40px; 
+    background-color: var(--content-bg); 
+    border-top: 1px solid #ddd;
+    color: var(--subtle-text);
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05); 
+    margin-top: auto; /* **PENTING: Mendorong footer ke bagian bawah #content-wrapper** */
+}
+
+#main-footer .footer-content p { margin: 5px 0; }
+#main-footer p:first-child { font-weight: 600; color: var(--text-color); }
+
+
+    
