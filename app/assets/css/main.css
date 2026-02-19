@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@source "../../../content/**/*";
+
+@theme static {
+  --container-8xl: 90rem;
+  --font-sans: 'Inter', 'Public Sans', sans-serif;
+
+  --color-blue-50: #F0F7FF;
+  --color-blue-100: #E0EFFF;
+  --color-blue-200: #C0DEFF;
+  --color-blue-300: #90C7FF;
+  --color-blue-400: #4B96FF;
+  --color-blue-500: #2563EB;
+  --color-blue-600: #1D4ED8;
+  --color-blue-700: #1E40AF;
+  --color-blue-800: #1E3A8A;
+  --color-blue-900: #172554;
+  --color-blue-950: #0D1B3E;
+}
+
+:root {
+  --ui-container: var(--container-8xl);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.animate-marquee {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.glass-pill {
+  @apply flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all;
+}
+
+.glass-pill:hover {
+  @apply border-blue-500/50 bg-blue-500/10 scale-105;
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px -5px var(--color-blue-500);
+}
+
+.hero-title {
+  @apply text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] text-left;
+  background: linear-gradient(135deg, #fff 40%, var(--color-blue-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  @apply text-lg md:text-xl text-neutral-400 leading-relaxed font-light max-w-2xl mt-3;
+}
+
+.hero-badge {
+  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/40 bg-blue-500/5 text-blue-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-3;
+}
+
+.hero-mesh {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 120%;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(29, 78, 216, 0.1) 0px, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-stat-card {
+  @apply flex flex-col items-start gap-1 px-7 py-5 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md transition-all duration-300;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.hero-stat-card:hover {
+  @apply border-blue-500/30 bg-blue-500/5 -translate-y-1.5;
+  box-shadow: 0 10px 30px -15px rgba(37, 99, 235, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+/* Marquee Redesign */
+.tech-item {
+  @apply flex items-center gap-4 transition-all duration-300 grayscale opacity-40 hover:grayscale-0 hover:opacity-100;
+}
+
+.tech-icon {
+  @apply w-10 h-10 md:w-12 md:h-12 text-blue-400;
+}
+
+.tech-text {
+  @apply text-2xl md:text-3xl font-bold tracking-tight whitespace-nowrap;
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300;
+}
+
+.card-hover-effect:hover {
+  @apply -translate-y-2 border-blue-500/30 bg-blue-500/5;
+  box-shadow: 0 10px 30px -15px rgba(37, 99, 235, 0.2);
+}
+
+/* Fix Hero Section spacing and position */
+.u-page-hero :where(.py-24, .sm\:py-32, .lg\:py-40) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
