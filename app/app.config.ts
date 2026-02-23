@@ -41,7 +41,7 @@ export default defineAppConfig({
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-bluesky',
-      'to': '#',
+      'to': 'https://bsky.app/profile/nlfts.dev',
       'target': '_blank',
       'aria-label': 'Bluesky'
     }, {
