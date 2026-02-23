@@ -28,13 +28,13 @@ const socialLinks = [
     status: 'Active'
   },
   {
-    name: 'Newsletter',
-    description: 'Dapatkan update mingguan mengenai teknologi terbaru, artikel blog, dan rilis framework.',
+    name: 'Email',
+    description: 'Kirim pesan langsung kepada tim kami untuk pertanyaan bisnis, kerjasama, atau dukungan teknis.',
     icon: 'i-lucide-mail',
     color: 'indigo',
-    link: '#',
-    label: 'Subscribe',
-    status: 'Weekly'
+    link: '/connected/email',
+    label: 'Send Email',
+    status: 'Official'
   }
 ]
 

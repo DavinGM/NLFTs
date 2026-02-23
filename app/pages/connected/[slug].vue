@@ -8,9 +8,10 @@ const countdown = ref(3)
 
 // Mapping redirect link
 const redirectMap: Record<string, string> = {
-  'discord': 'https://nlfts.dev/connected/discord',
-  'whatsapp': 'https://chat.whatsapp.com/EXAMPLE_LINK', // Ganti dengan link asli
-  'github': 'https://github.com/nlfts'
+  'discord': 'https://discord.gg/DYfWzfTUHV',
+  'whatsapp': 'https://chat.whatsapp.com/CsT9hYFZUmz6NRFJzZ3yhj?mode=gi_t',
+  'github': 'https://github.com/nlfts',
+  'email': 'https://talks@nlfts.dev'
 }
 
 const targetUrl = computed(() => redirectMap[target] || '/')
