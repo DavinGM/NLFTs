@@ -66,7 +66,7 @@ export default defineAppConfig({
       'aria-label': 'Instagram'
     }, {
       'icon': 'i-simple-icons-linkedin',
-      'to': '#',
+      'to': 'https://nlfts.dev/connected/linkedin',
       'target': '_blank',
       'aria-label': 'LinkedIn'
     }]
