@@ -61,7 +61,7 @@ export default defineAppConfig({
       'aria-label': 'WhatsApp'
     }, {
       'icon': 'i-simple-icons-instagram',
-      'to': '#',
+      'to': 'https://nlfts.dev/connected/instagram',
       'target': '_blank',
       'aria-label': 'Instagram'
     }, {
