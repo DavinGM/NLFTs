@@ -1,42 +1,5 @@
 <script setup lang="ts">
-const socialLinks = [
-  {
-    name: 'Discord',
-    description: 'Gabung di server pusat komunitas untuk diskusi teknis, tanya jawab, dan networking real-time.',
-    icon: 'i-simple-icons-discord',
-    color: 'blue',
-    link: '/connected/discord',
-    label: 'Join Server',
-    status: 'Online'
-  },
-  {
-    name: 'GitHub',
-    description: 'Kontribusi langsung ke repositori open-source kami. Fork, kembangkan, dan kirim Pull Request.',
-    icon: 'i-simple-icons-github',
-    color: 'neutral',
-    link: '/connected/github',
-    label: 'Start Contributing',
-    status: 'Public'
-  },
-  {
-    name: 'WhatsApp',
-    description: 'Grup khusus untuk informasi cepat, pengumuman event, dan diskusi ringan antar anggota.',
-    icon: 'i-simple-icons-whatsapp',
-    color: 'green',
-    link: '/connected/whatsapp',
-    label: 'Join Group',
-    status: 'Active'
-  },
-  {
-    name: 'Email',
-    description: 'Kirim pesan langsung kepada tim kami untuk pertanyaan bisnis, kerjasama, atau dukungan teknis.',
-    icon: 'i-lucide-mail',
-    color: 'indigo',
-    link: '/connected/email',
-    label: 'Send Email',
-    status: 'Official'
-  }
-]
+import { socialLinks } from '~/lib/socials'
 
 useSeoMeta({
   title: 'Connected - NLFTs Community',

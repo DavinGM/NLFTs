@@ -1,18 +1,9 @@
 <script setup lang="ts">
-const route = useRoute()
-const router = useRouter()
+import { redirectMap } from '~/lib/socials'
 
-// Ambil parameter slug dari URL jika ada (misal: discord, whatsapp)
+const route = useRoute()
 const target = route.params.slug as string
 const countdown = ref(3)
-
-// Mapping redirect link
-const redirectMap: Record<string, string> = {
-  'discord': 'https://discord.gg/DYfWzfTUHV',
-  'whatsapp': 'https://chat.whatsapp.com/CsT9hYFZUmz6NRFJzZ3yhj?mode=gi_t',
-  'github': 'https://github.com/nlfts',
-  'email': 'https://talks@nlfts.dev'
-}
 
 const targetUrl = computed(() => redirectMap[target] || '/')
 
