@@ -41,7 +41,7 @@ export default defineAppConfig({
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-bluesky',
-      'to': '#',
+      'to': 'https://bsky.app/profile/nlfts.dev',
       'target': '_blank',
       'aria-label': 'Bluesky'
     }, {
@@ -61,12 +61,12 @@ export default defineAppConfig({
       'aria-label': 'WhatsApp'
     }, {
       'icon': 'i-simple-icons-instagram',
-      'to': '#',
+      'to': 'https://nlfts.dev/connected/instagram',
       'target': '_blank',
       'aria-label': 'Instagram'
     }, {
       'icon': 'i-simple-icons-linkedin',
-      'to': '#',
+      'to': 'https://nlfts.dev/connected/linkedin',
       'target': '_blank',
       'aria-label': 'LinkedIn'
     }]

@@ -1,44 +1,5 @@
 <script setup lang="ts">
-const projects = [
-  {
-    title: 'Jurnalistik',
-    description: 'Website resmi Jurnalistik SMK Assalaam Bandung yang dibangun dengan Nuxt Content v4 dan GSAP .',
-    image: '/showcase/jurnalistik.png',
-    tech: ['Nuxt 4', 'GSAP', 'Nuxt UI', 'vue-pixel'],
-    link: 'https://github.com/NLFTs/Jurnalistik',
-    demo: 'https://jurnalistik.nlfts.dev',
-    status: 'Released',
-    contributors: [
-      'https://avatars.githubusercontent.com/u/228851591?v=4',
-      'https://avatars.githubusercontent.com/u/204519754?s=130&v=4',
-      'https://avatars.githubusercontent.com/u/228840381?s=130&v=4'
-    ]
-  },
-//   {
-//     title: 'NLFTs UI Kit',
-//     description: 'Koleksi komponen UI premium yang dirancang khusus untuk ekosistem framework NLFTs.',
-//     image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop',
-//     tech: ['Vue 3', 'Radix Vue', 'GSAP'],
-//     link: '#',
-//     status: 'In Progress',
-//     contributors: [
-//       'https://avatars.githubusercontent.com/u/228332586?s=130&v=4',
-//       'https://avatars.githubusercontent.com/u/182593937?s=130&v=4'
-//     ]
-//   },
-//   {
-//     title: 'Starter Template',
-//     description: 'Template dasar untuk memulai proyek Next-Level dengan struktur folder yang sudah terstandarisasi.',
-//     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop',
-//     tech: ['TypeScript', 'Eslint', 'Vitest'],
-//     link: '#',
-//     status: 'BETA',
-//     contributors: [
-//       'https://avatars.githubusercontent.com/u/232498018?s=130&v=4',
-//       'https://avatars.githubusercontent.com/u/218329504?v=4'
-//     ]
-//   }
-]
+import { projects } from '~/lib/showcase'
 
 useSeoMeta({
   title: 'Showcase - NLFTs Community',
