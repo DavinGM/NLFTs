@@ -32,7 +32,7 @@ provide('navigation', navigation)
     <ThemedBackground />
     <NuxtLoadingIndicator />
 
-    <AppHeader v-if="$route.meta.layout !== false" />
+    <AppHeader />
 
     <UMain>
       <NuxtLayout>

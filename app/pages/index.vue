@@ -9,13 +9,6 @@ useSeoMeta({
   ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/docs-light.png'
 })
 
-const navLinks = [
-  { label: 'Features', to: '#features' },
-  { label: 'Pricing', to: '#pricing' },
-  { label: 'Blog', to: '/blog' },
-  { label: 'Changelog', to: '/changelog' }
-]
-
 const companies = [
   { name: 'Proline', icon: 'i-lucide-zap' },
   { name: 'hues', icon: 'i-lucide-droplets' },
@@ -27,47 +20,7 @@ const companies = [
 </script>
 
 <template>
-  <div class="min-h-screen bg-black text-white selection:bg-purple-500/30">
-    <!-- Navbar -->
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <div class="flex items-center gap-8">
-          <NuxtLink to="/" class="flex items-center gap-2 text-2xl font-bold tracking-tighter">
-            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-black">
-              a
-            </div>
-            Acme
-          </NuxtLink>
-
-          <div class="hidden items-center gap-6 md:flex">
-            <NuxtLink
-              v-for="link in navLinks"
-              :key="link.label"
-              :to="link.to"
-              class="text-sm font-medium text-neutral-400 transition-colors hover:text-white"
-            >
-              {{ link.label }}
-            </NuxtLink>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-4">
-          <UButton
-            variant="ghost"
-            color="neutral"
-            class="hidden font-semibold md:flex"
-          >
-            Log In
-          </UButton>
-          <UButton
-            class="rounded-full bg-purple-600 px-6 py-2 font-bold text-white hover:bg-purple-700"
-          >
-            Get Started Today
-          </UButton>
-        </div>
-      </nav>
-    </header>
-
+  <div class="min-h-screen text-white selection:bg-purple-500/30">
     <main>
       <!-- Hero Section -->
       <section class="relative overflow-hidden px-6 pt-12 pb-32 md:pt-16 md:pb-48">

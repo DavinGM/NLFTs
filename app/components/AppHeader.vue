@@ -1,87 +1,79 @@
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
-
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
-
-const { header } = useAppConfig()
+const navLinks = [
+  { label: 'Docs', to: '/getting-started' },
+  { label: 'Teams', to: '/Teams' },
+  { label: 'Showcase', to: '/Showcase' },
+  { label: 'Enterprise', to: '#' },
+  { label: 'Connected', to: '/connected' }
+]
 </script>
 
 <template>
-  <UHeader
-    :ui="{ center: 'flex-1' }"
-    :to="header?.to || '/'"
-  >
-    <UNavigationMenu
-      :items="[
-        { label: 'Docs', to: '/getting-started', icon: 'i-lucide-book' },
-        { label: 'Teams', to: '/Teams', icon: 'i-lucide-users' },
-        { label: 'Showcase', to: '/Showcase', icon: 'i-lucide-layout' },
-        { label: 'Connected', to: '/connected', icon: 'i-lucide-share-2' }
-      ]"
-      variant="link"
-      class="hidden lg:flex justify-center"
-    />
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-8">
+        <NuxtLink to="/" class="flex items-center gap-2 text-2xl font-bold tracking-tighter">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-black">
+            a
+          </div>
+          Acme
+        </NuxtLink>
 
-    <template
-      v-if="header?.logo?.dark || header?.logo?.light || header?.title"
-      #title
-    >
-      <UColorModeImage
-        v-if="header?.logo?.dark || header?.logo?.light"
-        :light="header?.logo?.light!"
-        :dark="header?.logo?.dark!"
-        :alt="header?.logo?.alt"
-        class="h-6 w-auto shrink-0"
-      />
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-6 md:flex">
+          <NuxtLink
+            v-for="link in navLinks"
+            :key="link.label"
+            :to="link.to"
+            class="text-sm font-medium text-neutral-400 transition-colors hover:text-white"
+          >
+            {{ link.label }}
+          </NuxtLink>
+        </div>
+      </div>
 
-      <span v-else-if="header?.title">
-        {{ header.title }}
-      </span>
-    </template>
-
-    <template
-      v-else
-      #left
-    >
-      <NuxtLink :to="header?.to || '/'">
-        <AppLogo class="w-auto h-6 shrink-0" />
-      </NuxtLink>
-
-      <TemplateMenu />
-    </template>
-
-    <template #right>
-      <UContentSearchButton
-        v-if="header?.search"
-        class="lg:hidden"
-      />
-
-      <UColorModeButton v-if="header?.colorMode" />
-
-      <template v-if="header?.links">
+      <div class="flex items-center gap-4">
         <UButton
-          v-for="(link, index) of header.links"
-          :key="index"
-          v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
-        />
-      </template>
-    </template>
-
-    <template #body>
-      <UNavigationMenu
-        :items="[
-          { label: 'Docs', to: '/getting-started', icon: 'i-lucide-book' },
-          { label: 'Teams', to: '/Teams', icon: 'i-lucide-users' },
-          { label: 'Showcase', to: '/Showcase', icon: 'i-lucide-layout' },
-          { label: 'Connected', to: '/connected', icon: 'i-lucide-share-2' }
-        ]"
-        orientation="vertical"
-        class="lg:hidden border-b border-white/5 pb-4 mb-4"
-      />
-      <UContentNavigation
-        highlight
-        :navigation="navigation"
-      />
-    </template>
-  </UHeader>
+          variant="ghost"
+          color="neutral"
+          class="hidden font-semibold md:flex"
+        >
+          Log In
+        </UButton>
+        <UButton
+          class="rounded-full bg-purple-600 px-6 py-2 font-bold text-white hover:bg-purple-700"
+        >
+          Get Started Today
+        </UButton>
+        
+        <!-- Mobile Menu Button (Placeholder for consistency with Nuxt UI if needed, otherwise hidden in desktop) -->
+        <UPopover class="md:hidden">
+          <UButton
+            icon="i-lucide-menu"
+            variant="ghost"
+            color="neutral"
+            class="md:hidden"
+          />
+          <template #content>
+            <div class="p-4 bg-black border border-white/10 rounded-xl min-w-[200px] flex flex-col gap-2">
+              <NuxtLink
+                v-for="link in navLinks"
+                :key="link.label"
+                :to="link.to"
+                class="px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg"
+              >
+                {{ link.label }}
+              </NuxtLink>
+            </div>
+          </template>
+        </UPopover>
+      </div>
+    </nav>
+  </header>
 </template>
+
+<style scoped>
+.tracking-tighter {
+  letter-spacing: -0.04em;
+}
+</style>
