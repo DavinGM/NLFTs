@@ -31,7 +31,7 @@ provide('navigation', navigation)
   <UApp>
     <NuxtLoadingIndicator />
 
-    <AppHeader />
+    <AppHeader v-if="$route.meta.layout !== false" />
 
     <UMain>
       <NuxtLayout>
@@ -39,7 +39,7 @@ provide('navigation', navigation)
       </NuxtLayout>
     </UMain>
 
-    <AppFooter />
+    <AppFooter v-if="$route.meta.layout !== false" />
 
     <ClientOnly>
       <LazyUContentSearch
