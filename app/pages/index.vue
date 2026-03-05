@@ -113,31 +113,6 @@ const companies = [
             </UButton>
           </div>
         </div>
-
-        <!-- Modern Background: Dots and Diagonal Beams -->
-        <div class="absolute inset-0 -z-10 overflow-hidden">
-          <!-- Subtle Glows -->
-          <div class="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[120px]" />
-          <div class="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-blue-500/5 blur-[100px]" />
-          
-          <!-- Dot Pattern -->
-          <div class="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:32px_32px]" />
-          
-          <!-- Diagonal Beams SVG -->
-          <svg class="absolute inset-0 h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="rgba(139, 92, 246, 0)" />
-                <stop offset="50%" stop-color="rgba(139, 92, 246, 0.3)" />
-                <stop offset="100%" stop-color="rgba(139, 92, 246, 0)" />
-              </linearGradient>
-            </defs>
-            <line x1="-10%" y1="20%" x2="110%" y2="120%" stroke="url(#beam-grad)" stroke-width="0.5" />
-            <line x1="10%" y1="-10%" x2="130%" y2="110%" stroke="url(#beam-grad)" stroke-width="0.5" />
-            <line x1="-30%" y1="60%" x2="130%" y2="180%" stroke="url(#beam-grad)" stroke-width="0.5" />
-            <line x1="50%" y1="-20%" x2="150%" y2="80%" stroke="url(#beam-grad)" stroke-width="0.5" />
-          </svg>
-        </div>
       </section>
 
       <!-- Logo Cloud -->
