@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import type { ContentNavigationItem } from '@nuxt/content'
+
 const user = useSupabaseUser()
 const client = useSupabaseClient()
+const { header } = useAppConfig()
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
 
 const navLinks = [
   { label: 'Docs', to: '/getting-started' },
@@ -9,6 +13,8 @@ const navLinks = [
   { label: 'Enterprise', to: '#' },
   { label: 'Connected', to: '/connected' }
 ]
+
+const isContentSearchModalOpen = useState('content-search-modal', () => false)
 
 const signInWithGitHub = async () => {
   if (!process.client) return
@@ -82,7 +88,31 @@ const signOut = async () => {
         </div>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 md:gap-4">
+        <!-- External Links & Search -->
+        <div class="flex items-center gap-1 md:gap-2">
+          <UButton
+            v-if="header?.links?.[0]"
+            :to="header.links[0].to"
+            target="_blank"
+            :icon="header.links[0].icon"
+            color="neutral"
+            variant="ghost"
+            class="rounded-full hover:bg-white/5"
+            :aria-label="header.links[0]['aria-label']"
+          />
+          <UButton
+            icon="i-lucide-search"
+            color="neutral"
+            variant="ghost"
+            class="rounded-full hover:bg-white/5"
+            aria-label="Search"
+            @click="isContentSearchModalOpen = true"
+          />
+        </div>
+
+        <div class="h-4 w-px bg-white/10 hidden md:block" />
+
         <ClientOnly>
           <template v-if="!user">
             <UButton
@@ -94,10 +124,10 @@ const signOut = async () => {
               Log In
             </UButton>
             <UButton
-              class="rounded-full bg-purple-600 px-6 py-2 font-bold text-white hover:bg-purple-700"
+              class="rounded-full bg-purple-600 px-4 md:px-6 py-2 font-bold text-white hover:bg-purple-700 text-xs md:text-sm"
               @click="signInWithGitHub"
             >
-              Get Started Today
+              Get Started
             </UButton>
           </template>
           
@@ -107,15 +137,15 @@ const signOut = async () => {
                 {{ user.user_metadata?.full_name || user.email }}
               </span>
               <UPopover>
-              <img
-                v-if="user?.user_metadata?.avatar_url"
-                :src="user.user_metadata.avatar_url"
-                :alt="user.user_metadata.full_name || 'User'"
-                class="h-8 w-8 cursor-pointer rounded-full ring-2 ring-white/10 bg-neutral-800 object-cover"
-              />
-              <div v-else class="h-8 w-8 flex items-center justify-center cursor-pointer rounded-full bg-neutral-800 ring-2 ring-white/10 text-[10px] font-bold text-white uppercase">
-                {{ (user?.user_metadata?.full_name || user?.email || 'U').charAt(0) }}
-              </div>
+                <img
+                  v-if="user?.user_metadata?.avatar_url"
+                  :src="user.user_metadata.avatar_url"
+                  :alt="user.user_metadata.full_name || 'User'"
+                  class="h-8 w-8 cursor-pointer rounded-full ring-2 ring-white/10 bg-neutral-800 object-cover"
+                />
+                <div v-else class="h-8 w-8 flex items-center justify-center cursor-pointer rounded-full bg-neutral-800 ring-2 ring-white/10 text-[10px] font-bold text-white uppercase">
+                  {{ (user?.user_metadata?.full_name || user?.email || 'U').charAt(0) }}
+                </div>
                 <template #content>
                   <div class="flex min-w-[160px] flex-col gap-1 p-2 border border-white/10 rounded-xl bg-black">
                     <div class="px-3 py-2 text-xs font-semibold text-neutral-500 uppercase tracking-wider">
@@ -137,13 +167,13 @@ const signOut = async () => {
           </template>
 
           <template #fallback>
-            <div class="h-10 w-32 animate-pulse rounded-full bg-white/5" />
+            <div class="h-8 w-8 animate-pulse rounded-full bg-white/5" />
           </template>
         </ClientOnly>
         
         <!-- Mobile Menu Button -->
         <ClientOnly>
-          <UPopover class="md:hidden">
+          <UPopover class="md:hidden" overlay>
             <UButton
               icon="i-lucide-menu"
               variant="ghost"
@@ -151,15 +181,33 @@ const signOut = async () => {
               class="md:hidden"
             />
             <template #content>
-              <div class="p-4 bg-black border border-white/10 rounded-xl min-w-[200px] flex flex-col gap-2">
-                <NuxtLink
-                  v-for="link in navLinks"
-                  :key="link.label"
-                  :to="link.to"
-                  class="px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg"
-                >
-                  {{ link.label }}
-                </NuxtLink>
+              <div class="p-4 bg-black border border-white/10 rounded-xl min-w-[280px] max-h-[80vh] overflow-y-auto flex flex-col gap-6">
+                <!-- Navigation Links -->
+                <div class="flex flex-col gap-2">
+                  <div class="px-3 py-2 text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
+                    Main Menu
+                  </div>
+                  <NuxtLink
+                    v-for="link in navLinks"
+                    :key="link.label"
+                    :to="link.to"
+                    class="px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg active:bg-white/10 transition-colors"
+                  >
+                    {{ link.label }}
+                  </NuxtLink>
+                </div>
+
+                <!-- Documentation Links -->
+                <div v-if="navigation?.length" class="flex flex-col gap-2">
+                  <div class="px-3 py-2 text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
+                    Documentation
+                  </div>
+                  <UContentNavigation
+                    highlight
+                    :navigation="navigation"
+                    class="ml-1"
+                  />
+                </div>
               </div>
             </template>
           </UPopover>
