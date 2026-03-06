@@ -22,7 +22,7 @@ const signInWithGitHub = async () => {
   const { data, error } = await client.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: window.location.origin + '/confirm',
+      redirectTo: useRuntimeConfig().public.siteUrl + '/confirm',
       skipBrowserRedirect: true
     }
   })
