@@ -15,6 +15,15 @@ const companies = [
   { name: 'Grantara Indonesia', icon: 'i-lucide-mountain' },
   { name: 'Ryn Verse', icon: 'i-lucide-layers' }
 ]
+
+const memberAvatars = [
+  'https://avatars.githubusercontent.com/u/228851591?v=4',
+  'https://avatars.githubusercontent.com/u/228840381?v=4',
+  'https://avatars.githubusercontent.com/u/228839961?v=4',
+  'https://avatars.githubusercontent.com/u/225441519?v=4',
+  'https://avatars.githubusercontent.com/u/204519754?v=4',
+  'https://avatars.githubusercontent.com/u/232498781?v=4'
+]
 </script>
 
 <template>
@@ -27,15 +36,15 @@ const companies = [
           <div class="mb-8 flex flex-col items-center justify-center gap-3">
             <div class="flex -space-x-3 overflow-hidden">
               <img
-                v-for="i in 3"
-                :key="i"
-                :src="`https://i.pravatar.cc/100?u=${i}`"
+                v-for="(avatar, index) in memberAvatars"
+                :key="index"
+                :src="avatar"
                 class="inline-block h-8 w-8 rounded-full ring-2 ring-black bg-neutral-800"
-                alt="Customer Avatar"
+                alt="Member Avatar"
               />
             </div>
             <p class="text-sm font-medium text-neutral-400">
-              67 Members Only
+              67 Members only
             </p>
           </div>
 

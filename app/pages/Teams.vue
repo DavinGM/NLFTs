@@ -12,7 +12,7 @@ interface TeamMember {
   sponsor_url: string
 }
 
-const { data: teams, pending, error } = await useFetch<TeamMember[]>('/api/teams')
+const { data: teams, pending, error } = useLazyFetch<TeamMember[]>('/api/teams')
 
 useSeoMeta({
   title: 'Our Teams - NLFTs Community',
@@ -49,12 +49,28 @@ const getProviderIcon = (provider: string) => {
       </p>
     </div>
 
-    <div v-if="pending" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <UCard v-for="i in 6" :key="i" class="bg-neutral-900/40 border-white/5 h-64 animate-pulse" />
+    <!-- Skeleton Loading -->
+    <div v-if="pending && !teams" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <UCard v-for="i in 6" :key="i" class="bg-neutral-900/40 border-white/5 overflow-hidden ring-1 ring-white/5" :ui="{ body: 'p-6' }">
+        <div class="flex items-start justify-between mb-6">
+          <div class="h-24 w-24 rounded-full bg-neutral-800 animate-pulse" />
+          <div class="h-6 w-20 rounded-full bg-neutral-800 animate-pulse" />
+        </div>
+        <div class="space-y-3">
+          <div class="h-6 w-3/4 bg-neutral-800 animate-pulse rounded" />
+          <div class="h-4 w-1/2 bg-neutral-800 animate-pulse rounded" />
+          <div class="h-12 w-full bg-neutral-800 animate-pulse rounded" />
+        </div>
+      </UCard>
     </div>
 
     <div v-else-if="error" class="text-center py-20">
-      <p class="text-red-400">Gagal memuat data tim. Silakan coba lagi nanti.</p>
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/10 mb-6">
+        <UIcon name="i-lucide-alert-circle" class="w-8 h-8 text-red-500" />
+      </div>
+      <h3 class="text-xl font-bold text-white mb-2">Gagal memuat data tim</h3>
+      <p class="text-red-400/80 max-w-sm mx-auto mb-8">Terjadi kesalahan saat mengambil informasi dari GitHub. Silakan muat ulang halaman.</p>
+      <UButton color="neutral" variant="solid" label="Coba Lagi" icon="i-lucide-refresh-cw" @click="() => refreshNuxtData()" />
     </div>
 
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
@@ -66,9 +82,12 @@ const getProviderIcon = (provider: string) => {
       >
         <div class="flex flex-col p-6 h-full">
           <div class="flex items-start justify-between mb-6">
-            <img
+            <NuxtImg
               :src="member.avatar_url"
               :alt="member.name"
+              width="96"
+              height="96"
+              loading="lazy"
               class="h-24 w-24 rounded-full ring-2 ring-white/10 group-hover:ring-blue-500/50 transition-all duration-300 bg-neutral-800 object-cover"
             />
             <div class="flex flex-col items-end gap-2">
@@ -100,7 +119,7 @@ const getProviderIcon = (provider: string) => {
             <p class="text-neutral-400 text-sm font-medium mb-4">
               @{{ member.login }}
             </p>
-            <p v-if="member.bio" class="text-neutral-500 text-sm line-clamp-2 mb-4 italic">
+            <p v-if="member.bio" class="text-neutral-500 text-sm line-clamp-2 mb-4 italic leading-relaxed">
               "{{ member.bio }}"
             </p>
           </div>
@@ -113,7 +132,7 @@ const getProviderIcon = (provider: string) => {
                 icon="i-simple-icons-github"
                 color="neutral"
                 variant="ghost"
-                class="rounded-full hover:bg-white/5 p-2"
+                class="rounded-full hover:bg-white/5 p-2 transition-colors"
                 aria-label="GitHub Profile"
               />
               <UButton
@@ -123,7 +142,7 @@ const getProviderIcon = (provider: string) => {
                 icon="i-lucide-globe"
                 color="neutral"
                 variant="ghost"
-                class="rounded-full hover:bg-white/5 p-2"
+                class="rounded-full hover:bg-white/5 p-2 transition-colors"
                 aria-label="Website"
               />
               <UButton
@@ -134,7 +153,7 @@ const getProviderIcon = (provider: string) => {
                 :icon="getProviderIcon(social.provider)"
                 color="neutral"
                 variant="ghost"
-                class="rounded-full hover:bg-white/5 p-2"
+                class="rounded-full hover:bg-white/5 p-2 transition-colors"
                 :aria-label="social.provider"
               />
             </div>

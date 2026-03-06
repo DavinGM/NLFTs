@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
-    const token = process.env.GITHUB_TOKEN
+    const token = config.githubToken
 
     if (!token) {
         throw createError({
