@@ -8,7 +8,7 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
   <UContainer>
     <UPage>
       <template #left>
-        <UPageAside>
+        <UPageAside class="hidden lg:block">
           <UContentNavigation
             highlight
             :navigation="navigation"

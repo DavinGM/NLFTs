@@ -6,6 +6,8 @@ const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSe
   server: false
 })
 
+const isContentSearchModalOpen = useState('content-search-modal', () => false)
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -43,6 +45,7 @@ provide('navigation', navigation)
 
     <ClientOnly>
       <LazyUContentSearch
+        v-model="isContentSearchModalOpen"
         :files="files"
         :navigation="navigation"
       />

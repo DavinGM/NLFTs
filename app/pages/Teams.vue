@@ -1,10 +1,33 @@
 <script setup lang="ts">
-import { teams } from '~/lib/teams'
+interface TeamMember {
+  login: string
+  name: string
+  bio: string
+  avatar_url: string
+  html_url: string
+  blog: string
+  email: string
+  socials: Array<{ provider: string, url: string }>
+  has_sponsors: boolean
+  sponsor_url: string
+}
+
+const { data: teams, pending, error } = useLazyFetch<TeamMember[]>('/api/teams')
 
 useSeoMeta({
   title: 'Our Teams - NLFTs Community',
   description: 'Kenali para kolaborator hebat di balik NLFTs Community.'
 })
+
+const getProviderIcon = (provider: string) => {
+  switch (provider.toLowerCase()) {
+    case 'github': return 'i-simple-icons-github'
+    case 'twitter': return 'i-simple-icons-x'
+    case 'linkedin': return 'i-simple-icons-linkedin'
+    case 'website': return 'i-lucide-globe'
+    default: return 'i-lucide-link'
+  }
+}
 </script>
 
 <template>
@@ -26,72 +49,114 @@ useSeoMeta({
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+    <!-- Skeleton Loading -->
+    <div v-if="pending && !teams" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <UCard v-for="i in 6" :key="i" class="bg-neutral-900/40 border-white/5 overflow-hidden ring-1 ring-white/5" :ui="{ body: 'p-6' }">
+        <div class="flex items-start justify-between mb-6">
+          <div class="h-24 w-24 rounded-full bg-neutral-800 animate-pulse" />
+          <div class="h-6 w-20 rounded-full bg-neutral-800 animate-pulse" />
+        </div>
+        <div class="space-y-3">
+          <div class="h-6 w-3/4 bg-neutral-800 animate-pulse rounded" />
+          <div class="h-4 w-1/2 bg-neutral-800 animate-pulse rounded" />
+          <div class="h-12 w-full bg-neutral-800 animate-pulse rounded" />
+        </div>
+      </UCard>
+    </div>
+
+    <div v-else-if="error" class="text-center py-20">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/10 mb-6">
+        <UIcon name="i-lucide-alert-circle" class="w-8 h-8 text-red-500" />
+      </div>
+      <h3 class="text-xl font-bold text-white mb-2">Gagal memuat data tim</h3>
+      <p class="text-red-400/80 max-w-sm mx-auto mb-8">Terjadi kesalahan saat mengambil informasi dari GitHub. Silakan muat ulang halaman.</p>
+      <UButton color="neutral" variant="solid" label="Coba Lagi" icon="i-lucide-refresh-cw" @click="() => refreshNuxtData()" />
+    </div>
+
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
       <UCard
         v-for="member in teams"
-        :key="member.user"
+        :key="member.login"
         class="group relative overflow-hidden bg-neutral-900/40 backdrop-blur-xl border-white/5 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2 ring-1 ring-white/5"
         :ui="{ body: 'p-0' }"
       >
         <div class="flex flex-col p-6 h-full">
           <div class="flex items-start justify-between mb-6">
-            <img
-              :src="member.avatar"
-              :alt="member.user"
+            <NuxtImg
+              :src="member.avatar_url"
+              :alt="member.name"
+              width="96"
+              height="96"
+              loading="lazy"
               class="h-24 w-24 rounded-full ring-2 ring-white/10 group-hover:ring-blue-500/50 transition-all duration-300 bg-neutral-800 object-cover"
             />
-            <UBadge
-              variant="subtle"
-              :color="member.type === 'Frontend' ? 'info' : member.type === 'Backend' ? 'primary' : 'neutral'"
-              class="capitalize px-3 py-1 rounded-full font-medium"
-            >
-              {{ member.type }}
-            </UBadge>
+            <div class="flex flex-col items-end gap-2">
+              <UBadge
+                variant="subtle"
+                color="primary"
+                class="capitalize px-3 py-1 rounded-full font-medium"
+              >
+                Contributor
+              </UBadge>
+              <UButton
+                v-if="member.has_sponsors"
+                :to="member.sponsor_url"
+                target="_blank"
+                size="xs"
+                color="primary"
+                variant="subtle"
+                icon="i-lucide-heart"
+                label="Sponsor"
+                class="rounded-full font-bold"
+              />
+            </div>
           </div>
 
           <div class="flex-1">
             <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-1">
-              {{ member.user }}
+              {{ member.name }}
             </h3>
-            <p class="text-neutral-400 text-sm font-medium mb-2">
-              {{ member.action }} <span class="text-blue-500/80">{{ member.target }}</span>
+            <p class="text-neutral-400 text-sm font-medium mb-4">
+              @{{ member.login }}
             </p>
-            <div class="flex items-center gap-2 text-xs text-neutral-500">
-              <UIcon name="i-lucide-clock" class="w-3 h-3" />
-              <span>Active {{ member.time }}</span>
-            </div>
+            <p v-if="member.bio" class="text-neutral-500 text-sm line-clamp-2 mb-4 italic leading-relaxed">
+              "{{ member.bio }}"
+            </p>
           </div>
 
-          <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+          <div class="mt-4 pt-6 border-t border-white/5 flex items-center justify-between">
+            <div class="flex items-center gap-2">
               <UButton
-                :to="member.github"
+                :to="member.html_url"
                 target="_blank"
                 icon="i-simple-icons-github"
                 color="neutral"
                 variant="ghost"
-                class="rounded-full hover:bg-white/5 active:scale-90 transition-all"
+                class="rounded-full hover:bg-white/5 p-2 transition-colors"
                 aria-label="GitHub Profile"
               />
               <UButton
-                v-if="member.website"
-                :to="member.website"
+                v-if="member.blog"
+                :to="member.blog.startsWith('http') ? member.blog : 'https://' + member.blog"
                 target="_blank"
                 icon="i-lucide-globe"
                 color="neutral"
                 variant="ghost"
-                class="rounded-full hover:bg-white/5 active:scale-90 transition-all"
-                aria-label="Personal Website"
+                class="rounded-full hover:bg-white/5 p-2 transition-colors"
+                aria-label="Website"
+              />
+              <UButton
+                v-for="social in member.socials"
+                :key="social.url"
+                :to="social.url"
+                target="_blank"
+                :icon="getProviderIcon(social.provider)"
+                color="neutral"
+                variant="ghost"
+                class="rounded-full hover:bg-white/5 p-2 transition-colors"
+                :aria-label="social.provider"
               />
             </div>
-            <UButton
-              variant="link"
-              color="primary"
-              class="text-xs p-0 group/link"
-              label="Lihat Profil"
-              trailing-icon="i-lucide-arrow-right"
-              :ui="{ trailingIcon: 'group-hover/link:translate-x-1 transition-transform' }"
-            />
           </div>
         </div>
 
