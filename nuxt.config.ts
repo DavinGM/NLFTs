@@ -7,8 +7,13 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-og-image',
     'nuxt-llms',
-    '@nuxtjs/mcp-toolkit'
+    '@nuxtjs/mcp-toolkit',
+    '@nuxtjs/supabase'
   ],
+
+  supabase: {
+    redirect: false
+  },
 
   devtools: {
     enabled: true

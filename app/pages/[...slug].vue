@@ -61,7 +61,7 @@ const links = computed(() => {
     >
       <template #links>
         <UButton
-          v-for="(link, index) in page.links"
+          v-for="(link, index) in page.links || []"
           :key="index"
           v-bind="link"
         />
