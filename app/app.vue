@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { seo } = useAppConfig()
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
+const { data: navigation } = useAsyncData('navigation', () => queryCollectionNavigation('docs'))
 const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
   server: false
 })
@@ -28,10 +28,9 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <UApp>
-    <ThemedBackground />
+  <div class="relative min-h-screen">
     <NuxtLoadingIndicator />
-
+    <ThemedBackground />
     <AppHeader />
 
     <UMain>
@@ -48,5 +47,5 @@ provide('navigation', navigation)
         :navigation="navigation"
       />
     </ClientOnly>
-  </UApp>
+  </div>
 </template>

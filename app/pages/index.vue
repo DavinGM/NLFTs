@@ -4,18 +4,16 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'NLFTs - Streamlined Communication for Iterating Fast',
-  description: 'Acme is an installable, self-hosted team chat system. You can have several paragraphs in here and the thing will wrap gracefully.',
+  title: 'NLFTs - present yourself for DX to all Developers',
+  description: 'NLFTs (Next-Level Frameworks & Tech Stack) is a community focused on exploring the latest technologies, programming best practices, and building community-driven projects. We believe that collaboration is key.',
   ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/docs-light.png'
 })
 
 const companies = [
-  { name: 'Proline', icon: 'i-lucide-zap' },
-  { name: 'hues', icon: 'i-lucide-droplets' },
-  { name: 'Greenish', icon: 'i-lucide-leaf' },
-  { name: 'Cloud', icon: 'i-lucide-cloud' },
-  { name: 'Volume', icon: 'i-lucide-music' },
-  { name: 'PinPoint', icon: 'i-lucide-map-pin' }
+  { name: 'FTs Project', icon: 'i-lucide-boxes' },
+  { name: 'Asia Code 2022', icon: 'i-lucide-code-2' },
+  { name: 'Grantara Indonesia', icon: 'i-lucide-mountain' },
+  { name: 'Ryn Verse', icon: 'i-lucide-layers' }
 ]
 </script>
 
@@ -28,25 +26,25 @@ const companies = [
           <!-- Avatars / Social Proof -->
           <div class="mb-8 flex flex-col items-center justify-center gap-3">
             <div class="flex -space-x-3 overflow-hidden">
-              <UAvatar
+              <img
                 v-for="i in 3"
                 :key="i"
                 :src="`https://i.pravatar.cc/100?u=${i}`"
-                size="sm"
-                class="ring-2 ring-black"
+                class="inline-block h-8 w-8 rounded-full ring-2 ring-black bg-neutral-800"
+                alt="Customer Avatar"
               />
             </div>
             <p class="text-sm font-medium text-neutral-400">
-              1,254 happy customers
+              67 Members Only
             </p>
           </div>
 
           <!-- Hero Headline -->
           <h1 class="mx-auto max-w-3xl text-5xl font-extrabold tracking-tighter sm:text-7xl">
-            Streamlined Communication for <span class="text-neutral-500">Iterating Fast</span>
+            present yourself for <span class="text-indigo-500">DX</span> to all  <span class="text-neutral-500">Developers</span>
           </h1>
           <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400 md:text-xl">
-            Acme is an installable, self-hosted team chat system. You can have several paragraphs in here and the thing will wrap gracefully.
+            NLFTs (Next-Level Frameworks & Tech Stack) is a community focused on exploring the latest technologies, programming best practices, and building community-driven projects. We believe that collaboration is key to innovation.
           </p>
 
           <!-- Action Buttons -->
@@ -56,32 +54,40 @@ const companies = [
               size="lg"
               class="w-full border-white/10 px-8 font-bold sm:w-auto"
             >
-              Request Demo
+              Request Invite
             </UButton>
             <UButton
               size="lg"
-              class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 px-10 font-bold text-white hover:brightness-110 sm:w-auto"
+              class="w-full bg-linear-to-r from-purple-600 to-indigo-600 px-10 font-bold text-white hover:brightness-110 sm:w-auto"
             >
-              Get Started for Free
+              Join Discord
             </UButton>
           </div>
         </div>
       </section>
 
-      <!-- Logo Cloud -->
-      <section class="border-y border-white/5 bg-neutral-950/50 py-16">
+      <section class="border-y border-white/5 bg-neutral-950/50 py-16 relative overflow-hidden">
         <div class="mx-auto max-w-7xl px-6 text-center">
           <p class="mb-12 text-sm font-semibold uppercase tracking-widest text-neutral-500">
-            Join 4,000+ companies already growing
+            Join 5+ teams already growing
           </p>
-          <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6 lg:gap-12">
-            <div
-              v-for="company in companies"
-              :key="company.name"
-              class="flex items-center justify-center gap-2 text-neutral-400 grayscale transition-all hover:grayscale-0 hover:text-white"
-            >
-              <UIcon :name="company.icon" class="h-6 w-6" />
-              <span class="text-xl font-bold tracking-tight">{{ company.name }}</span>
+          
+          <div class="relative">
+            <!-- Fade Effects -->
+            <div class="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-neutral-950 to-transparent z-10 hidden md:block" />
+            <div class="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-neutral-950 to-transparent z-10 hidden md:block" />
+            
+            <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16 lg:gap-x-24">
+              <div
+                v-for="company in companies"
+                :key="company.name"
+                class="flex items-center justify-center gap-3 text-neutral-400 grayscale transition-all duration-300 hover:grayscale-0 hover:text-white hover:scale-110"
+              >
+                <UIcon :name="company.icon" class="h-6 w-6 text-indigo-400" />
+                <span class="text-xl font-bold tracking-tight">{{ company.name }}</span>
+              </div>
+              
+              <!-- Placeholder for overflow effect if > 4, currently empty as we have 4 -->
             </div>
           </div>
         </div>

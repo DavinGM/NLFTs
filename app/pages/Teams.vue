@@ -31,19 +31,18 @@ useSeoMeta({
         v-for="member in teams"
         :key="member.user"
         class="group relative overflow-hidden bg-neutral-900/40 backdrop-blur-xl border-white/5 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2 ring-1 ring-white/5"
-        :ui="{ body: { padding: 'p-0' } }"
+        :ui="{ body: 'p-0' }"
       >
         <div class="flex flex-col p-6 h-full">
           <div class="flex items-start justify-between mb-6">
-            <UAvatar
+            <img
               :src="member.avatar"
               :alt="member.user"
-              size="xl"
-              class="ring-2 ring-white/10 group-hover:ring-blue-500/50 transition-all duration-300"
+              class="h-24 w-24 rounded-full ring-2 ring-white/10 group-hover:ring-blue-500/50 transition-all duration-300 bg-neutral-800 object-cover"
             />
             <UBadge
               variant="subtle"
-              :color="member.type === 'Frontend' ? 'blue' : member.type === 'Backend' ? 'indigo' : 'neutral'"
+              :color="member.type === 'Frontend' ? 'info' : member.type === 'Backend' ? 'primary' : 'neutral'"
               class="capitalize px-3 py-1 rounded-full font-medium"
             >
               {{ member.type }}

@@ -48,7 +48,7 @@ useSeoMeta({
             <!-- Status Badge -->
             <div class="absolute top-4 right-4">
               <UBadge
-                :color="project.status === 'Released' ? 'green' : project.status === 'In Progress' ? 'orange' : 'neutral'"
+                :color="project.status === 'Released' ? 'success' : project.status === 'In Progress' ? 'warning' : 'neutral'"
                 variant="subtle"
                 class="rounded-full px-3 py-1 backdrop-blur-md border border-white/10"
               >
@@ -103,12 +103,12 @@ useSeoMeta({
               </div>
               
               <div class="flex -space-x-2">
-                <UAvatar
+                <img
                   v-for="(avatar, idx) in project.contributors"
                   :key="idx"
                   :src="avatar"
-                  size="xs"
-                  class="ring-2 ring-neutral-900"
+                  class="h-6 w-6 rounded-full ring-2 ring-neutral-900 bg-neutral-800 object-cover"
+                  alt="Contributor"
                 />
               </div>
             </div>
