@@ -51,5 +51,7 @@ export const redirectMap: Record<string, string> = {
     'discord': 'https://discord.gg/DYfWzfTUHV',
     'whatsapp': 'https://chat.whatsapp.com/CsT9hYFZUmz6NRFJzZ3yhj?mode=gi_t',
     'github': 'https://github.com/nlfts',
-    'email': 'https://talks@nlfts.dev'
+    'email': 'mailto:talks@nlfts.dev',
+    'instagram': 'https://www.instagram.com/nlfts.dev',
+    'linkedin': 'https://www.linkedin.com/company/nlfts'
 }
