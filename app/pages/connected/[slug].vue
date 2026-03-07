@@ -2,15 +2,36 @@
 import { redirectMap } from '~/lib/socials'
 
 const route = useRoute()
-const target = route.params.slug as string
 const countdown = ref(3)
 
-const targetUrl = computed(() => redirectMap[target] || '/')
+const targetParam = computed(() => {
+  const slug = route.params.slug
+  return (Array.isArray(slug) ? slug[0] : slug) || ''
+})
+
+const targetUrl = computed(() => {
+  const normalized = targetParam.value.toLowerCase().trim()
+  return redirectMap[normalized] || '/'
+})
+
+const host = ref('')
 
 onMounted(() => {
-  // Domain Enforcement
-  const host = window.location.host
-  if (host === 'nlfts.dev') {
+  // Domain & Path Enforcement
+  host.value = window.location.host
+  const currentHost = host.value
+  const currentPath = window.location.pathname
+  const target = targetParam.value
+
+  // 1. BLOCK: Redirects MUST happen on go.nlfts.dev subdomain
+  if (!currentHost.startsWith('go.')) {
+    // If someone tries to access /connected/slug on the main domain, redirect to home
+    window.location.href = 'https://nlfts.dev'
+    return
+  }
+
+  // 2. CLEAN URL ENFORCEMENT: If accessed via go.nlfts.dev/connected/slug, redirect to clean go.nlfts.dev/slug
+  if (currentPath.startsWith('/connected/')) {
     window.location.href = `https://go.nlfts.dev/${target}`
     return
   }
@@ -19,7 +40,9 @@ onMounted(() => {
     countdown.value--
     if (countdown.value <= 0) {
       clearInterval(timer)
-      window.location.href = targetUrl.value
+      if (targetUrl.value) {
+        window.location.href = targetUrl.value
+      }
     }
   }, 1000)
 })
@@ -55,12 +78,18 @@ useSeoMeta({
         <h1 class="text-2xl font-black tracking-[0.3em] text-white uppercase italic">
             SECURE REDIRECTING
         </h1>
-        <div class="flex items-center justify-center gap-3">
-            <span class="h-px w-8 bg-linear-to-r from-transparent to-blue-500" />
-            <p class="text-blue-400 font-bold text-xs uppercase tracking-widest animate-pulse">
-                Auto Redirecting to {{ target || 'Community' }}
-            </p>
-            <span class="h-px w-8 bg-linear-to-l from-transparent to-blue-500" />
+        <div class="flex flex-col items-center justify-center gap-3">
+            <div class="flex items-center gap-3">
+              <span class="h-px w-8 bg-linear-to-r from-transparent to-blue-500" />
+              <p class="text-blue-400 font-bold text-xs uppercase tracking-widest animate-pulse">
+                  Auto Redirecting to {{ targetParam || 'Community' }}
+              </p>
+              <span class="h-px w-8 bg-linear-to-l from-transparent to-blue-500" />
+            </div>
+            
+            <a :href="targetUrl" class="text-[10px] text-blue-500/50 hover:text-blue-400 underline uppercase tracking-tighter transition-colors mt-2">
+              Click here if you are not redirected automatically
+            </a>
         </div>
       </div>
 
@@ -68,7 +97,7 @@ useSeoMeta({
       <div class="mt-16 flex flex-col gap-2 opacity-30">
         <div class="text-[10px] font-mono text-blue-500 uppercase tracking-tighter">Initializing secure bridge... DONE</div>
         <div class="text-[10px] font-mono text-blue-500 uppercase tracking-tighter">Routing to {{ targetUrl }}... READY</div>
-        <div class="text-[10px] font-mono text-blue-500 uppercase tracking-tighter">Redirecting in {{ countdown }}s</div>
+        <div class="text-[10px] font-mono text-blue-500 uppercase tracking-tighter">Domain Host: {{ host }}</div>
       </div>
     </div>
   </div>
