@@ -10,6 +10,17 @@
             ],
             "destination": "https://nlfts.dev",
             "permanent": true
+        },
+        {
+            "source": "/((?!discord|whatsapp|github|email|instagram|linkedin).*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "go.nlfts.dev"
+                }
+            ],
+            "destination": "https://nlfts.dev",
+            "permanent": false
         }
     ],
     "rewrites": [
