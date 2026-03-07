@@ -170,7 +170,7 @@ const getProviderIcon = (provider: string) => {
       <h3 class="text-2xl font-bold text-white mb-4">Ingin Menjadi Bagian Dari Kami?</h3>
       <p class="text-neutral-400 mb-8 max-w-lg mx-auto">Kami selalu terbuka untuk kolaborator baru yang bersemangat dalam membangun teknologi masa depan.</p>
       <UButton
-        to="https://nlfts.dev/connected/discord"
+        to="https://go.nlfts.dev/discord"
         size="xl"
         label="Gabung di Discord"
         class="rounded-full px-10 glow-blue font-bold"

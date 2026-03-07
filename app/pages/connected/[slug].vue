@@ -8,6 +8,13 @@ const countdown = ref(3)
 const targetUrl = computed(() => redirectMap[target] || '/')
 
 onMounted(() => {
+  // Domain Enforcement
+  const host = window.location.host
+  if (host === 'nlfts.dev') {
+    window.location.href = `https://go.nlfts.dev/${target}`
+    return
+  }
+
   const timer = setInterval(() => {
     countdown.value--
     if (countdown.value <= 0) {
