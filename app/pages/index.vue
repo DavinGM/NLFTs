@@ -148,7 +148,7 @@ const memberAvatars = [
     <footer class="border-t border-white/10 bg-black py-12">
       <div class="mx-auto max-w-7xl px-6 flex flex-col items-center justify-between gap-6 md:flex-row">
         <p class="text-sm text-neutral-500">
-          © 2026 Acme Community. All rights reserved.
+          © 2024 NLFTs Community. All rights reserved.
         </p>
         <div class="flex gap-6">
           <NuxtLink to="#" class="text-sm text-neutral-400 hover:text-white">Privacy</NuxtLink>

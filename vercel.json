@@ -1,0 +1,27 @@
+{
+    "redirects": [
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "go.nlfts.dev"
+                }
+            ],
+            "destination": "https://nlfts.dev",
+            "permanent": true
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/:slug",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "go.nlfts.dev"
+                }
+            ],
+            "destination": "/connected/:slug"
+        }
+    ]
+}
