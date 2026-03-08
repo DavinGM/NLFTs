@@ -28,7 +28,11 @@ useSeoMeta({
   title,
   ogTitle: title,
   description,
-  ogDescription: description
+  ogDescription: description,
+  ogType: 'article',
+  twitterCard: 'summary_large_image',
+  ogImage: '/seo/main.png',
+  twitterImage: '/seo/main.png'
 })
 
 const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
@@ -95,7 +99,7 @@ const links = computed(() => {
         >
           <div
             class="hidden lg:block space-y-6"
-            :class="{ '!mt-6': page.body?.toc?.links?.length }"
+            :class="{ 'mt-6!': page.body?.toc?.links?.length }"
           >
             <USeparator
               v-if="page.body?.toc?.links?.length"

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /getting-started
+Allow: /contribute
+Allow: /blog
+
+Sitemap: https://nlfts.dev/sitemap.xml
