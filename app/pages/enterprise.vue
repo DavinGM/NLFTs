@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import SectionA from '~/components/enterprise/SectionA.vue'
-import SectionB from '~/components/enterprise/SectionB.vue'
-import SectionC from '~/components/enterprise/SectionC.vue'
-import SectionD from '~/components/enterprise/SectionD.vue'
-import SectionE from '~/components/enterprise/SectionE.vue'
-import SectionF from '~/components/enterprise/SectionF.vue'
+import SecHero from '~/components/enterprise/SecHero.vue'
+import SecCapabilities from '~/components/enterprise/SecCapabilities.vue'
+import SecEcosystem from '~/components/enterprise/SecEcosystem.vue'
+import SecPartnership from '~/components/enterprise/SecPartnership.vue'
+import SecCTA from '~/components/enterprise/SecCTA.vue'
+import SecSponsors from '~/components/enterprise/SecSponsors.vue'
 
 useSeoMeta({
   title: 'NLFTs.inc — Engineering the Digital Standard',
@@ -48,12 +48,12 @@ const partnershipPoints = [
 
 <template>
   <div class="bg-[#050505] text-white font-sans min-h-screen overflow-x-hidden selection:bg-indigo-500/30">
-    <SectionA />
-    <SectionB :metrics="metrics" />
-    <SectionC :ecosystem="ecosystem" />
-    <SectionD :partnershipPoints="partnershipPoints" />
-    <SectionE />
-    <SectionF :sponsors="sponsors" />
+    <SecHero />
+    <SecCapabilities :metrics="metrics" />
+    <SecEcosystem :ecosystem="ecosystem" />
+    <SecPartnership :partnershipPoints="partnershipPoints" />
+    <SecCTA />
+    <SecSponsors :sponsors="sponsors" />
   </div>
 </template>
 
