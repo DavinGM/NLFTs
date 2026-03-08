@@ -26,7 +26,7 @@
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="https://go.nlfts.dev/discord"
+          href="https://nlfts.dev/discord"
           target="_blank"
           class="group px-10 py-5 rounded-full font-black text-lg text-white bg-linear-to-r from-indigo-600 to-purple-600 hover:brightness-110 transition-all shadow-[0_0_50px_rgba(99,102,241,0.4)] hover:shadow-[0_0_80px_rgba(99,102,241,0.6)]"
         >
@@ -34,7 +34,7 @@
           <span class="ml-2 inline-block group-hover:translate-x-1 transition-transform">→</span>
         </a>
         <a
-          href="https://go.nlfts.dev/email"
+          href="https://nlfts.dev/email"
           class="px-10 py-5 rounded-full font-bold text-base text-neutral-400 border border-white/10 hover:border-white/25 hover:text-white transition-all"
         >
           Send a Brief

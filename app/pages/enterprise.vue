@@ -24,12 +24,12 @@ const sponsors = [
 ]
 
 const ecosystem = [
-  { label: 'Cloud Infrastructure', icon: 'i-lucide-cloud', desc: 'Auto-scaling, multi-region deployment.' },
-  { label: 'Security Hardening', icon: 'i-lucide-shield', desc: 'Zero-trust architecture by default.' },
-  { label: 'UI/UX Engineering', icon: 'i-lucide-layers', desc: 'Design systems that scale with products.' },
-  { label: 'Backend Systems', icon: 'i-lucide-server', desc: 'High-throughput APIs & data pipelines.' },
-  { label: 'Observability', icon: 'i-lucide-activity', desc: 'Full-stack monitoring & tracing.' },
-  { label: 'Edge Network', icon: 'i-lucide-globe', desc: 'Sub-50ms global response times.' }
+  { label: 'Frontend Mastery', icon: 'i-simple-icons-nuxtdotjs', desc: 'Nuxt, Vue 3, React, Next.js' },
+  { label: 'Backend Engineering', icon: 'i-simple-icons-laravel', desc: 'Laravel, Java, Go, Node.js' },
+  { label: 'Mobile Excellence', icon: 'i-simple-icons-flutter', desc: 'Flutter, Kotlin, Swift' },
+  { label: 'System Architecture', icon: 'i-simple-icons-github', desc: 'CI/CD, GitHub Actions, Docker' },
+  { label: 'Build Precision', icon: 'i-simple-icons-vite', desc: 'Vite, Webpack, Turbo' },
+  { label: 'Cloud Systems', icon: 'i-lucide-cloud', desc: 'AWS, GCP, Azure, Vercel' }
 ]
 
 const metrics = [

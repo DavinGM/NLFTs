@@ -23,16 +23,9 @@ onMounted(() => {
   const currentPath = window.location.pathname
   const target = targetParam.value
 
-  // 1. BLOCK: Redirects MUST happen on go.nlfts.dev subdomain
-  if (!currentHost.startsWith('go.')) {
-    // If someone tries to access /connected/slug on the main domain, redirect to home
-    window.location.href = 'https://nlfts.dev'
-    return
-  }
-
-  // 2. CLEAN URL ENFORCEMENT: If accessed via go.nlfts.dev/connected/slug, redirect to clean go.nlfts.dev/slug
+  // 1. CLEAN URL ENFORCEMENT: If accessed via /connected/slug, redirect to clean /slug
   if (currentPath.startsWith('/connected/')) {
-    window.location.href = `https://go.nlfts.dev/${target}`
+    window.location.href = `https://nlfts.dev/${target}`
     return
   }
 
