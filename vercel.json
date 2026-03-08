@@ -12,27 +12,15 @@
             "permanent": true
         },
         {
-            "source": "/((?!discord|whatsapp|github|email|instagram|linkedin).*)",
+            "source": "/(.*)",
             "has": [
                 {
                     "type": "host",
                     "value": "go.nlfts.dev"
                 }
             ],
-            "destination": "https://nlfts.dev",
-            "permanent": false
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/:slug",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "go.nlfts.dev"
-                }
-            ],
-            "destination": "/connected/:slug"
+            "destination": "https://nlfts.dev/$1",
+            "permanent": true
         }
     ]
 }

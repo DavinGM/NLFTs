@@ -84,3 +84,28 @@ create trigger on_auth_user_created
 ## 6. Selesai!
 
 Sekarang tombol "Log In" di navigasi akan otomatis melakukan redirect ke GitHub dan kembali ke proyek setelah sukses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

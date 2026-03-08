@@ -4,12 +4,17 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'NLFTs - present yourself for DX to all Developers',
-  description: 'NLFTs (Next-Level Frameworks & Tech Stack) is a community focused on exploring the latest technologies, programming best practices, and building community-driven projects. We believe that collaboration is key.',
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/docs-light.png'
+  title: 'NLFTs Community - Next-Level Frameworks & Tech Stack',
+  description: 'NLFTs (Next-Level Frameworks & Tech Stack) is a collaborative community for modern developers to explore cutting-edge technologies and best practices.',
+  ogTitle: 'NLFTs Community - Next-Level Frameworks & Tech Stack',
+  ogDescription: 'Collaborative hub for modern tech stacks, frameworks, and developer experience.',
+  ogImage: '/seo/main.png',
+  twitterImage: '/seo/main.png',
+  twitterCard: 'summary_large_image',
+  ogSiteName: 'NLFTs Community'
 })
 
-const companies = [
+const sponsors = [
   { name: 'FTs Project', icon: 'i-lucide-boxes' },
   { name: 'Asia Code 2022', icon: 'i-lucide-code-2' },
   { name: 'Grantara Indonesia', icon: 'i-lucide-mountain' },
@@ -53,7 +58,7 @@ const memberAvatars = [
             present yourself for <span class="text-indigo-500">DX</span> to all  <span class="text-neutral-500">Developers</span>
           </h1>
           <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400 md:text-xl">
-            NLFTs (Next-Level Frameworks & Tech Stack) is a community focused on exploring the latest technologies, programming best practices, and building community-driven projects. We believe that collaboration is key to innovation.
+            <span class="font-bold">NLFTs</span> adalah perusahaan berbasis komunitas yang berfokus pada eksplorasi teknologi terbaru, praktik terbaik pemrograman, dan membangun proyek sumber terbuka. Kami percaya bahwa <span class="font-bold" >Kolaborasi</span> adalah kunci <span class="font-bold">inovasi</span>.
           </p>
 
           <!-- Action Buttons -->
@@ -66,7 +71,7 @@ const memberAvatars = [
               Request Invite
             </UButton>
             <UButton
-              to="https://go.nlfts.dev/discord"
+              to="https://nlfts.dev/discord"
               size="lg"
               class="w-full bg-linear-to-r from-purple-600 to-indigo-600 px-10 font-bold text-white hover:brightness-110 sm:w-auto"
             >
@@ -79,7 +84,7 @@ const memberAvatars = [
       <section class="border-y border-white/5 bg-neutral-950/50 py-16 relative overflow-hidden">
         <div class="mx-auto max-w-7xl px-6 text-center">
           <p class="mb-12 text-sm font-semibold uppercase tracking-widest text-neutral-500">
-            Join 5+ teams already growing
+            Didukung oleh Sponsor Kami
           </p>
           
           <div class="relative">
@@ -89,12 +94,12 @@ const memberAvatars = [
             
             <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16 lg:gap-x-24">
               <div
-                v-for="company in companies"
-                :key="company.name"
+                v-for="sponsor in sponsors"
+                :key="sponsor.name"
                 class="flex items-center justify-center gap-3 text-neutral-400 grayscale transition-all duration-300 hover:grayscale-0 hover:text-white hover:scale-110"
               >
-                <UIcon :name="company.icon" class="h-6 w-6 text-indigo-400" />
-                <span class="text-xl font-bold tracking-tight">{{ company.name }}</span>
+                <UIcon :name="sponsor.icon" class="h-6 w-6 text-indigo-400" />
+                <span class="text-xl font-bold tracking-tight">{{ sponsor.name }}</span>
               </div>
               
               <!-- Placeholder for overflow effect if > 4, currently empty as we have 4 -->
@@ -108,13 +113,13 @@ const memberAvatars = [
         <div class="mx-auto max-w-7xl">
           <div class="mb-20 text-center">
             <span class="inline-flex items-center rounded-full bg-neutral-900 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-neutral-400 ring-1 ring-white/10">
-              Communication
+              Komunitas
             </span>
             <h2 class="mt-6 text-4xl font-bold tracking-tighter sm:text-6xl">
-              Enhanced Team Communication
+              Komunikasi Tim yang Ditingkatkan
             </h2>
             <p class="mx-auto mt-6 max-w-3xl text-lg text-neutral-400 md:text-xl">
-              Simplify team discussions and collaboration with our efficient messaging features, enabling swift decision-making and project progress tracking.
+              Sederhanakan diskusi tim dan kolaborasi dengan fitur perpesanan kami yang efisien, memungkinkan pengambilan keputusan yang cepat dan pelacakan kemajuan proyek.
             </p>
           </div>
 

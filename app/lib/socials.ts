@@ -14,7 +14,7 @@ export const socialLinks: SocialLink[] = [
         description: 'Gabung di server pusat komunitas untuk diskusi teknis, tanya jawab, dan networking real-time.',
         icon: 'i-simple-icons-discord',
         color: 'blue',
-        link: 'https://go.nlfts.dev/discord',
+        link: 'https://nlfts.dev/discord',
         label: 'Join Server',
         status: 'Online'
     },
@@ -23,7 +23,7 @@ export const socialLinks: SocialLink[] = [
         description: 'Kontribusi langsung ke repositori open-source kami. Fork, kembangkan, dan kirim Pull Request.',
         icon: 'i-simple-icons-github',
         color: 'neutral',
-        link: 'https://go.nlfts.dev/github',
+        link: 'https://nlfts.dev/github',
         label: 'Start Contributing',
         status: 'Public'
     },
@@ -32,7 +32,7 @@ export const socialLinks: SocialLink[] = [
         description: 'Grup khusus untuk informasi cepat, pengumuman event, dan diskusi ringan antar anggota.',
         icon: 'i-simple-icons-whatsapp',
         color: 'green',
-        link: 'https://go.nlfts.dev/whatsapp',
+        link: 'https://nlfts.dev/whatsapp',
         label: 'Join Group',
         status: 'Active'
     },
@@ -41,7 +41,7 @@ export const socialLinks: SocialLink[] = [
         description: 'Kirim pesan langsung kepada tim kami untuk pertanyaan bisnis, kerjasama, atau dukungan teknis.',
         icon: 'i-lucide-mail',
         color: 'indigo',
-        link: 'https://go.nlfts.dev/email',
+        link: 'https://nlfts.dev/email',
         label: 'Send Email',
         status: 'Official'
     }

@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Docs', to: '/getting-started' },
   { label: 'Teams', to: '/Teams' },
   { label: 'Showcase', to: '/Showcase' },
-  { label: 'Enterprise', to: '#' },
+  { label: 'Enterprise', to: '/enterprise' },
   { label: 'Connected', to: '/connected' }
 ]
 
