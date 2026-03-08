@@ -126,9 +126,9 @@ const memberAvatars = [
           <div class="grid gap-8 md:grid-cols-2">
             <!-- Feature Card 1 -->
             <div class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 p-8 transition-all hover:border-purple-500/30">
-              <h3 class="text-2xl font-bold">Real-Time Messaging</h3>
+              <h3 class="text-2xl font-bold">Pesan Waktu Nyata</h3>
               <p class="mt-4 text-neutral-400">
-                Instantly connect with your team across channels and private messages. Stay in sync with zero latency.
+                Terhubung secara instan dengan tim Anda di berbagai saluran dan pesan pribadi. Tetap sinkron tanpa latensi.
               </p>
               <div class="mt-8 flex h-48 items-center justify-center rounded-2xl bg-neutral-900 border border-white/5">
                 <UIcon name="i-lucide-message-square" class="h-16 w-16 text-purple-500 opacity-20 group-hover:opacity-40 transition-opacity" />
@@ -137,9 +137,9 @@ const memberAvatars = [
 
             <!-- Feature Card 2 -->
             <div class="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 p-8 transition-all hover:border-indigo-500/30">
-              <h3 class="text-2xl font-bold">Collaborative Workspace</h3>
+              <h3 class="text-2xl font-bold">Ruang Kerja Kolaboratif</h3>
               <p class="mt-4 text-neutral-400">
-                Bring all your tools into one place. Shared documents, integrated apps, and streamlined workflows.
+                Integrasikan semua alat Anda di satu tempat. Dokumen bersama, aplikasi terintegrasi, dan alur kerja yang efisien.
               </p>
               <div class="mt-8 flex h-48 items-center justify-center rounded-2xl bg-neutral-900 border border-white/5">
                 <UIcon name="i-lucide-layout" class="h-16 w-16 text-indigo-500 opacity-20 group-hover:opacity-40 transition-opacity" />

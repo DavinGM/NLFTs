@@ -22,7 +22,7 @@ export default defineAppConfig({
       light: '',
       dark: ''
     },
-    search: false,
+    search: true,
     colorMode: true,
     links: [{
       'icon': 'i-simple-icons-github',
