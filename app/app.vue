@@ -1,12 +1,19 @@
 <script setup lang="ts">
 const { seo } = useAppConfig()
 
-const { data: navigation } = useAsyncData('navigation', () => queryCollectionNavigation('docs'))
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false
-})
+const { data: navigation } = await useAsyncData(() => queryCollectionNavigation('docs'))
+const { data: files } = await useAsyncData(() => queryCollectionSearchSections('docs'))
 
-const isContentSearchModalOpen = useState('content-search-modal', () => false)
+const { isOpen: isContentSearchModalOpen, toggle } = useSearch()
+
+defineShortcuts({
+  meta_k: {
+    usingInput: true,
+    handler: () => {
+      toggle()
+    }
+  }
+})
 
 useHead({
   meta: [
@@ -45,7 +52,7 @@ provide('navigation', navigation)
 
     <ClientOnly>
       <LazyUContentSearch
-        v-model="isContentSearchModalOpen"
+        v-model:open="isContentSearchModalOpen"
         :files="files"
         :navigation="navigation"
       />

@@ -14,7 +14,7 @@ const navLinks = [
   { label: 'Connected', to: '/connected' }
 ]
 
-const isContentSearchModalOpen = useState('content-search-modal', () => false)
+const { isOpen: isContentSearchModalOpen, toggle } = useSearch()
 
 const signInWithGitHub = async () => {
   if (!process.client) return
@@ -105,9 +105,23 @@ const signOut = async () => {
             icon="i-lucide-search"
             color="neutral"
             variant="ghost"
-            class="rounded-full hover:bg-white/5"
+            class="hidden md:flex gap-2 rounded-xl px-4 py-2 hover:bg-white/5 border border-white/5"
             aria-label="Search"
-            @click="isContentSearchModalOpen = true"
+            @click="toggle"
+          >
+            <div class="flex items-center gap-1 text-[10px] font-bold text-neutral-500 ml-1">
+              <UKbd>Ctrl</UKbd>
+              <UKbd>K</UKbd>
+            </div>
+          </UButton>
+          <!-- Mobile Search Button -->
+          <UButton
+            icon="i-lucide-search"
+            color="neutral"
+            variant="ghost"
+            class="md:hidden rounded-full hover:bg-white/5"
+            aria-label="Search"
+            @click="toggle"
           />
         </div>
 

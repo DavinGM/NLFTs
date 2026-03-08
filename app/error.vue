@@ -16,10 +16,10 @@ useSeoMeta({
   description: 'We are sorry but this page could not be found.'
 })
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false
-})
+const { data: navigation } = await useAsyncData(() => queryCollectionNavigation('docs'))
+const { data: files } = await useAsyncData(() => queryCollectionSearchSections('docs'))
+
+const { isOpen: isContentSearchModalOpen } = useSearch()
 
 provide('navigation', navigation)
 </script>
@@ -34,6 +34,7 @@ provide('navigation', navigation)
       <AppFooter />
 
       <LazyUContentSearch
+        v-model:open="isContentSearchModalOpen"
         :files="files"
         :navigation="navigation"
       />
