@@ -8,9 +8,9 @@ defineProps<{
   <section id="output" class="py-24 md:py-32 px-6 border-t border-white/5 scroll-mt-32">
     <div class="mx-auto max-w-7xl">
       <div class="mb-16">
-        <p class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-4">Capabilities</p>
+        <p class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-4">Kapasitas</p>
         <h2 class="text-4xl sm:text-5xl font-black tracking-tighter text-white max-w-2xl">
-          System Architecture,<br/>Not Just Services.
+          Arsitektur Sistem,<br/>Bukan Hanya Layanan.
         </h2>
       </div>
 
@@ -49,18 +49,18 @@ defineProps<{
           <div>
             <div class="inline-flex items-center gap-2 text-indigo-400 mb-4">
               <UIcon name="i-lucide-cpu" class="w-5 h-5"/>
-              <span class="text-xs font-bold uppercase tracking-widest">System Architecture</span>
+              <span class="text-xs font-bold uppercase tracking-widest">Arsitektur Sistem</span>
             </div>
-            <h3 class="text-3xl font-black tracking-tighter text-white">Designed to<br/>Scale Indefinitely.</h3>
+            <h3 class="text-3xl font-black tracking-tighter text-white">Dirancang untuk<br/>Menjangkau Indefinit.</h3>
           </div>
-          <p class="text-neutral-500 text-sm max-w-sm">Microservices, monorepos, or modular monoliths — we architect for your growth trajectory, not a generic template.</p>
+          <p class="text-neutral-500 text-sm max-w-sm">Microservices, monorepos, atau modular monoliths — dirancang untuk menjangkau indefinite growth trajectory, bukan template umum.</p>
         </div>
 
         <!-- Cell B - Metrics -->
         <div class="rounded-3xl border border-white/8 bg-white/3 backdrop-blur-sm p-8 flex flex-col justify-between group hover:border-purple-500/30 transition-all duration-500">
           <div class="flex items-center gap-2 text-purple-400 mb-6">
             <UIcon name="i-lucide-zap" class="w-5 h-5"/>
-            <span class="text-xs font-bold uppercase tracking-widest">Performance</span>
+            <span class="text-xs font-bold uppercase tracking-widest">Performa</span>
           </div>
           <div class="grid grid-cols-2 gap-4 flex-1">
             <div v-for="m in metrics" :key="m.label" class="flex flex-col justify-center p-4 rounded-2xl bg-white/3 border border-white/5 group-hover:border-indigo-500/20 transition-colors">
@@ -74,7 +74,7 @@ defineProps<{
         <div class="rounded-3xl border border-white/8 bg-white/3 backdrop-blur-sm p-8 flex flex-col justify-between group hover:border-indigo-500/30 transition-all duration-500">
           <div class="flex items-center gap-2 text-indigo-400 mb-6">
             <UIcon name="i-lucide-pen-tool" class="w-5 h-5"/>
-            <span class="text-xs font-bold uppercase tracking-widest">Design Precision</span>
+            <span class="text-xs font-bold uppercase tracking-widest">Presisi Desain</span>
           </div>
           <div class="flex-1 flex items-center justify-center">
             <svg viewBox="0 0 200 140" fill="none" class="w-full opacity-50 group-hover:opacity-80 transition-opacity">
@@ -85,7 +85,7 @@ defineProps<{
               <rect x="35" y="102" width="80" height="8" rx="4" fill="#6366f1" fill-opacity="0.08"/>
             </svg>
           </div>
-          <p class="text-neutral-500 text-sm">Pixel-perfect UI systems with measurable design tokens and full Figma handoff.</p>
+          <p class="text-neutral-500 text-sm">UI sistem yang pixel-perfect dengan token desain yang dapat diukur dan transfer Figma.</p>
         </div>
 
         <!-- Cell D - Scalability -->
@@ -94,10 +94,10 @@ defineProps<{
           <div class="flex-1">
             <div class="flex items-center gap-2 text-purple-400 mb-4">
               <UIcon name="i-lucide-trending-up" class="w-5 h-5"/>
-              <span class="text-xs font-bold uppercase tracking-widest">Scalability</span>
+              <span class="text-xs font-bold uppercase tracking-widest">Skalabilitas</span>
             </div>
-            <h3 class="text-3xl font-black tracking-tighter text-white mb-4">Infrastructure that<br/>grows with you.</h3>
-            <p class="text-neutral-500 text-sm max-w-sm">From 10 to 10 million users — our systems are validated at scale before you need it.</p>
+            <h3 class="text-3xl font-black tracking-tighter text-white mb-4">Infrastruktur yang<br/>berfungsi dengan Anda.</h3>
+            <p class="text-neutral-500 text-sm max-w-sm">Dari 10 hingga 10 juta pengguna — sistem kami telah divalidasi pada skala sebelum Anda membutuhkannya.</p>
           </div>
           <div class="hidden md:block shrink-0">
             <svg viewBox="0 0 200 120" fill="none" class="w-48 opacity-40 group-hover:opacity-70 transition-opacity">

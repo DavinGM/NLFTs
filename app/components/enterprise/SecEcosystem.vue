@@ -31,16 +31,16 @@ const techStack = [
       <div class="text-center mb-32">
         <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.02] border border-white/[0.08] mb-8">
           <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-          <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-400">Technology Integration Standard</span>
+          <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-neutral-400">Standar Integrasi Teknologi</span>
         </div>
         <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-white mb-8">
           The <span class="text-indigo-500">Global</span> Stack <br class="hidden md:block">
           One Seamless System.
         </h2>
         <p class="text-neutral-500 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed">
-          We leverage the world's most advanced frameworks to build 
-          production-ready systems. From <span class="text-white font-medium">Nuxt</span> to <span class="text-white font-medium">Laravel</span>, 
-          our ecosystem is engineered for absolute performance.
+          Kami menggunakan framework terkini untuk membangun 
+          sistem yang siap produksi. Dari <span class="text-white font-medium">Nuxt</span> hingga <span class="text-white font-medium">Laravel</span>, 
+          dan ekosistem kami lainnya dirancang untuk kinerja absolut.
         </p>
       </div>
 
