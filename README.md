@@ -59,8 +59,8 @@ Kami selalu membuka pintu bagi siapa saja yang ingin berkontribusi!
 ## 💬 Hubungi Kami
 Ingin mengobrol atau punya pertanyaan?
 - **Website:** [nlfts.dev](https://nlfts.dev)
-- **Discord:** [nlfts.dev/connected/discord](https://nlfts.dev/connected/discord)
-- **GitHub:** [github.dev/nlfts](https://github.com/nlfts)
+- **Discord:** [Discord Server](https://discord.gg/DYfWzfTUHV)
+- **GitHub:** [GitHub Profile](https://github.com/nlfts)
 - **FAQ:** [nlfts.dev/faq](https://nlfts.dev/faq)
 
 ---

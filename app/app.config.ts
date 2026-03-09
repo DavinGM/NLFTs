@@ -31,7 +31,7 @@ export default defineAppConfig({
       'aria-label': 'GitHub'
     }, {
       'icon': 'i-simple-icons-discord',
-      'to': 'https://nlfts.dev/discord',
+      'to': 'https://discord.gg/DYfWzfTUHV',
       'target': '_blank',
       'aria-label': 'Discord'
     }]
@@ -46,7 +46,7 @@ export default defineAppConfig({
       'aria-label': 'Bluesky'
     }, {
       'icon': 'i-simple-icons-discord',
-      'to': 'https://nlfts.dev/discord',
+      'to': 'https://discord.gg/DYfWzfTUHV',
       'target': '_blank',
       'aria-label': 'Discord'
     }, {
@@ -56,17 +56,17 @@ export default defineAppConfig({
       'aria-label': 'GitHub'
     }, {
       'icon': 'i-simple-icons-whatsapp',
-      'to': 'https://nlfts.dev/whatsapp',
+      'to': 'https://chat.whatsapp.com/CsT9hYFZUmz6NRFJzZ3yhj?mode=gi_t',
       'target': '_blank',
       'aria-label': 'WhatsApp'
     }, {
       'icon': 'i-simple-icons-instagram',
-      'to': 'https://nlfts.dev/instagram',
+      'to': 'https://www.instagram.com/nlfts.dev',
       'target': '_blank',
       'aria-label': 'Instagram'
     }, {
       'icon': 'i-simple-icons-linkedin',
-      'to': 'https://nlfts.dev/linkedin',
+      'to': 'https://www.linkedin.com/company/nlfts',
       'target': '_blank',
       'aria-label': 'LinkedIn'
     }]

@@ -71,7 +71,7 @@ const memberAvatars = [
               Request Invite
             </UButton>
             <UButton
-              to="https://nlfts.dev/discord"
+              to="https://discord.gg/DYfWzfTUHV"
               size="lg"
               class="w-full bg-linear-to-r from-purple-600 to-indigo-600 px-10 font-bold text-white hover:brightness-110 sm:w-auto"
             >

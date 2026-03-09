@@ -10,8 +10,7 @@ const navLinks = [
   { label: 'Docs', to: '/getting-started' },
   { label: 'Teams', to: '/Teams' },
   { label: 'Showcase', to: '/Showcase' },
-  { label: 'Enterprise', to: '/enterprise' },
-  { label: 'Connected', to: '/connected' }
+  { label: 'Enterprise', to: '/enterprise' }
 ]
 
 const { isOpen: isContentSearchModalOpen, toggle } = useSearch()
