@@ -68,7 +68,8 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    provider: 'iconify'
+    provider: 'iconify',
+    fetchTimeout: 3000
   },
 
   llms: {

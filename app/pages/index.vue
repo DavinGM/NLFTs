@@ -66,9 +66,11 @@ const memberAvatars = [
             <UButton
               variant="outline"
               size="lg"
+              to="https://developer.nlfts.dev"
+              target="_blank"
               class="w-full border-white/10 px-8 font-bold sm:w-auto"
             >
-              Request Invite
+              Developer Program
             </UButton>
             <UButton
               to="https://discord.gg/DYfWzfTUHV"

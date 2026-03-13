@@ -57,7 +57,27 @@ export default defineEventHandler(async (event) => {
 
         return detailedMembers
     } catch (error: any) {
-        console.error('Error fetching GitHub teams:', error)
+        console.error('Error fetching GitHub teams:', error.message || error)
+
+        // If in development, return mock data to prevent blocking local development
+        if (process.dev) {
+            console.warn('Returning mock data for teams in development mode due to fetch failure.')
+            return [
+                {
+                    login: 'davingm',
+                    name: 'Davin Mantiri',
+                    bio: 'Lead Maintainer of NLFTs',
+                    avatar_url: 'https://github.com/davingm.png',
+                    html_url: 'https://github.com/davingm',
+                    blog: 'https://nlfts.dev',
+                    email: null,
+                    socials: [{ provider: 'github', url: 'https://github.com/davingm' }],
+                    has_sponsors: true,
+                    sponsor_url: 'https://github.com/sponsors/davingm'
+                }
+            ]
+        }
+
         throw createError({
             statusCode: 500,
             statusMessage: 'Failed to fetch GitHub teams'
