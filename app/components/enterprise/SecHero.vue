@@ -47,9 +47,9 @@
       <!-- Purposeful Copy -->
       <div class="max-w-xl text-center mb-10">
         <p class="hero-lead text-neutral-400 text-base md:text-lg leading-relaxed font-normal">
-          Architecting high-performance infrastructure for teams that demand 
-          reliability. We eliminate complexity and technical debt with 
-          modular, production-ready code systems.
+          Merancang infrastruktur berkinerja tinggi untuk tim yang menuntut keandalan. 
+          Kami menghilangkan kompleksitas dan hutang teknis dengan sistem kode modular
+          yang siap produksi.
         </p>
       </div>
 
@@ -59,14 +59,14 @@
           to="#cta" 
           class="btn-primary group relative px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold rounded-md transition-all flex items-center gap-2"
         >
-          Start the Build
+          Mulai Bangun Bisnis Anda
           <UIcon name="i-lucide-chevron-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </NuxtLink>
         <NuxtLink 
           to="#output" 
           class="btn-secondary px-8 py-3.5 bg-white/[0.02] border border-white/[0.08] hover:bg-white/[0.05] hover:border-white/[0.15] text-white text-sm font-semibold rounded-md transition-all"
         >
-          Capabilities Report
+          Hubungi Penyedia Layanan
         </NuxtLink>
       </div>
 
@@ -76,12 +76,12 @@
     <div class="absolute bottom-10 inset-x-0 flex justify-center pointer-events-none">
       <div class="flex items-center gap-12 px-8 py-3 border-t border-white/[0.05]">
         <div class="flex flex-col items-center">
-          <span class="text-[9px] uppercase tracking-[.2em] text-neutral-600 font-bold mb-1">Architecture</span>
-          <span class="text-[11px] font-mono text-neutral-400">Scalable Monolith</span>
+          <span class="text-[9px] uppercase tracking-[.2em] text-neutral-600 font-bold mb-1">Arsitektur</span>
+          <span class="text-[11px] font-mono text-neutral-400">Monolit yang Dapat Diperluas</span>
         </div>
         <div class="w-px h-6 bg-white/[0.05]"></div>
         <div class="flex flex-col items-center">
-          <span class="text-[9px] uppercase tracking-[.2em] text-neutral-600 font-bold mb-1">Performance</span>
+          <span class="text-[9px] uppercase tracking-[.2em] text-neutral-600 font-bold mb-1">Performa</span>
           <span class="text-[11px] font-mono text-neutral-400">P99 &lt; 50ms</span>
         </div>
         <div class="w-px h-6 bg-white/[0.05]"></div>

@@ -17,27 +17,27 @@
     </div>
 
     <div class="relative z-10 text-center max-w-3xl mx-auto">
-      <p class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-6">Ready?</p>
+      <p class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-6">Bagaimana?</p>
       <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-8 leading-none">
-        Start the Build.
+        Mulai Pembangunan.
       </h2>
       <p class="text-xl text-neutral-500 mb-12 leading-relaxed">
-        Bring your specs. We'll architect the rest. No agency fluff — just engineering.
+        Bawa spesifikasi. Kami akan merancang. Tidak ada fluff agensi — hanya teknologi.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="https://nlfts.dev/discord"
+          href="https://discord.gg/DYfWzfTUHV"
           target="_blank"
           class="group px-10 py-5 rounded-full font-black text-lg text-white bg-linear-to-r from-indigo-600 to-purple-600 hover:brightness-110 transition-all shadow-[0_0_50px_rgba(99,102,241,0.4)] hover:shadow-[0_0_80px_rgba(99,102,241,0.6)]"
         >
-          Open a Channel
+          Buka Channel Discord
           <span class="ml-2 inline-block group-hover:translate-x-1 transition-transform">→</span>
         </a>
         <a
-          href="https://nlfts.dev/email"
+          href="mailto:talks@nlfts.dev"
           class="px-10 py-5 rounded-full font-bold text-base text-neutral-400 border border-white/10 hover:border-white/25 hover:text-white transition-all"
         >
-          Send a Brief
+          Kirim Brief
         </a>
       </div>
     </div>

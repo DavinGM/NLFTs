@@ -9,12 +9,12 @@ defineProps<{
     <div class="mx-auto max-w-7xl">
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div class="sticky top-24">
-          <p class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-4">Strategic Partnership</p>
+          <p class="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-4">Kemitraan Strategis</p>
           <h2 class="text-4xl sm:text-5xl font-black tracking-tighter text-white mb-6 leading-tight">
-            The ROI of<br/>Building Right.
+            ROI dari<br/>Membangun yang Benar.
           </h2>
           <p class="text-neutral-500 text-lg leading-relaxed">
-            Choosing the right engineering partner isn't a cost — it's your highest-return investment. Here's why teams choose NLFTs.inc.
+            Pilih mitra teknis yang tepat bukan biaya — ini adalah investasi yang memberikan ROI terbesar. Berikut adalah alasan mengapa tim memilih NLFTs Company
           </p>
         </div>
         <div class="flex flex-col gap-10">

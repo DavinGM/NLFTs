@@ -7,9 +7,9 @@ import SecCTA from '~/components/enterprise/SecCTA.vue'
 import SecSponsors from '~/components/enterprise/SecSponsors.vue'
 
 useSeoMeta({
-  title: 'NLFTs.inc — Engineering the Digital Standard',
+  title: 'NLFTs Company — Engineering the Digital Standard',
   description: 'Enterprise-grade software architecture, bespoke code, and high-performance infrastructure. Built for teams that demand precision.',
-  ogTitle: 'NLFTs.inc — Engineering the Digital Standard',
+  ogTitle: 'NLFTs Company — Engineering the Digital Standard',
   ogDescription: 'Enterprise software house. Scalability, performance, and design precision.',
   ogImage: '/seo/main.png',
   twitterCard: 'summary_large_image',
@@ -40,9 +40,9 @@ const metrics = [
 ]
 
 const partnershipPoints = [
-  { icon: 'i-lucide-trending-up', title: 'Faster Time-to-Market', body: 'Ship production-ready products in weeks, not quarters. Our architecture templates eliminate boilerplate and accelerate your build cycle.' },
-  { icon: 'i-lucide-lock', title: 'Reduce Technical Debt', body: 'Every system we deliver is documented, tested, and built to evolve — not just for today, but for the next 5 years.' },
-  { icon: 'i-lucide-dollar-sign', title: 'Engineering ROI', body: 'Invest in infrastructure that compounds. Our clients consistently report 3x productivity gains within the first two quarters.' },
+  { icon: 'i-lucide-trending-up', title: 'Mempercepat Waktu Peluncuran Produk ke Pasar', body: 'Kirim produk siap produksi dalam hitungan minggu, bukan kuartal. Templat arsitektur kami menghilangkan kode berulang dan mempercepat siklus pengembangan Anda.' },
+  { icon: 'i-lucide-lock', title: 'Mengurangi Teknik Debt', body: 'Setiap sistem yang kami kirimkan didokumentasikan, diuji, dan dibangun untuk mengembangkan — tidak hanya untuk hari ini, tetapi untuk 5 tahun ke depan.' },
+  { icon: 'i-lucide-dollar-sign', title: 'ROI dari Teknik', body: 'Investasi dalam infrastruktur yang mengkomposisi. Pelanggan kami konsisten melaporkan peningkatan produktivitas 3x dalam dua kuartal pertama.' },
 ]
 </script>
 
