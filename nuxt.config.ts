@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true
+    enabled: false
   },
 
   colorMode: {
@@ -68,7 +68,8 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    provider: 'iconify'
+    provider: 'iconify',
+    fetchTimeout: 3000
   },
 
   llms: {
